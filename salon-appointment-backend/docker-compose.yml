@@ -1,0 +1,16 @@
+
+services:
+  postgres:
+    image: postgres:16.4-alpine
+    container_name: salon_appointment_postgres
+    environment:
+      POSTGRES_DB: salon
+      POSTGRES_USER: postgres-challenge
+      POSTGRES_PASSWORD: 123
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
